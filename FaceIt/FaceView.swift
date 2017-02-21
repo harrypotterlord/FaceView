@@ -18,7 +18,9 @@ class FaceView: UIView {
         
         let skull = UIBezierPath(arcCenter: skullCenter, radius: skullRadius,
                                  startAngle: 0.0, endAngle: CGFloat(2 * M_PI), clockwise: false)
-        
+        skull.lineWidth = 5.0
+        UIColor.blue.set()
+        skull.stroke()
         
     }
 
