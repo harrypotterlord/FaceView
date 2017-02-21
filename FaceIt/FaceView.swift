@@ -13,8 +13,11 @@ class FaceView: UIView {
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect)
     {
-        var skullRadius = min(bounds.size.width, bounds.size.height) / 2
-        var skullCenter = center
+        let skullRadius = min(bounds.size.width, bounds.size.height) / 2
+        let skullCenter = CGPoint(x: bounds.midX, y: bounds.midY)
+        
+        let skull = UIBezierPath(arcCenter: skullCenter, radius: skullRadius,
+                                 startAngle: 0.0, endAngle: CGFloat(2 * M_PI), clockwise: false)
         
         
     }
