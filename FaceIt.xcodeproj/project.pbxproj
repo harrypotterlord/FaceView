@@ -61,10 +61,10 @@
 			isa = PBXGroup;
 			children = (
 				18F18A941E5C6C4E00FECC11 /* Main.storyboard */,
+				1891288F1E5EBBEA00D6CB5B /* EmotionsVC.swift */,
 				18F18A921E5C6C4E00FECC11 /* FaceViewController.swift */,
 				18F18AA31E5C6CFE00FECC11 /* FaceView.swift */,
 				18BC9CF11E5D5CF0008514C5 /* FacialExpression.swift */,
-				1891288F1E5EBBEA00D6CB5B /* EmotionsVC.swift */,
 				18F18AA21E5C6C5E00FECC11 /* Supporting Files */,
 			);
 			path = FaceIt;
