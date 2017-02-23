@@ -31,6 +31,17 @@ class FaceView: UIView {
     
     
     
+    func changeScale(recognizer: UIPinchGestureRecognizer) {
+        switch recognizer.state {
+        case .changed, .ended:
+            scale *= recognizer.scale
+            recognizer.scale = 1.0
+        default:
+            break
+        }
+    }
+    
+    
     private var skullRadius: CGFloat {
         return min(bounds.size.width, bounds.size.height) / 2 * scale
     }
