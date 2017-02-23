@@ -44,10 +44,38 @@ class FaceViewController: UIViewController {
                                                                    action: #selector(FaceView.changeScale(recognizer:))))
             
             
+            let happierSwipe = UISwipeGestureRecognizer(target: self, action: #selector(FaceViewController.increaseHappiness))
+            
+            happierSwipe.direction = .up
+            faceView.addGestureRecognizer(happierSwipe)
+            
+            let sadSwipe = UISwipeGestureRecognizer(target: self, action: #selector(FaceViewController.decreaseHappiness))
+            
+            sadSwipe.direction = .down
+            faceView.addGestureRecognizer(sadSwipe)
+            
             updateUI()
         }
     }
     
+    func increaseHappiness() {
+        expression.mouth = expression.mouth.happierMouth()
+    }
+    
+    func decreaseHappiness() {
+        expression.mouth = expression.mouth.sadderMouth()
+    }
+    
+    @IBAction func toggleEyes(_ sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            switch expression.eyes {
+            case .Open:
+                expression.eyes = .Closed
+            case .Closed: expression.eyes = .Open
+            case .Squinting: break
+            }
+        }
+    }
 
 }
 
